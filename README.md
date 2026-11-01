@@ -60,12 +60,7 @@
 
 <img src="assets/s-stats.svg" width="100%" alt="GitHub activity"/>
 
-<img height="175" src="https://github-readme-stats.vercel.app/api?username=TANISHKA2-TECH&show_icons=true&hide_border=true&bg_color=0a0e24&title_color=c4b5fd&icon_color=22d3ee&text_color=e2e8f0&ring_color=8b5cf6&count_private=true" alt="stats"/>
-<img height="175" src="https://github-readme-stats.vercel.app/api/top-langs/?username=TANISHKA2-TECH&layout=compact&hide_border=true&bg_color=0a0e24&title_color=c4b5fd&text_color=e2e8f0" alt="top languages"/>
-
 <img src="https://streak-stats.demolab.com/?user=TANISHKA2-TECH&hide_border=true&background=0a0e24&ring=8b5cf6&fire=22d3ee&currStreakLabel=c4b5fd&currStreakNum=e2e8f0&sideNums=e2e8f0&sideLabels=94a3b8&dates=94a3b8" alt="streak"/>
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=TANISHKA2-TECH&bg_color=0a0e24&color=c4b5fd&line=8b5cf6&point=22d3ee&area=true&area_color=8b5cf6&hide_border=true" width="100%" alt="activity graph"/>
 
 <img src="https://raw.githubusercontent.com/TANISHKA2-TECH/TANISHKA2-TECH/output/github-snake-dark.svg" width="100%" alt="contribution snake"/>
 
