@@ -59,6 +59,8 @@
 <br/><br/>
 
 <img src="assets/s-stats.svg" width="100%" alt="GitHub activity"/>
+<img src="assets/gh-stats.svg" width="100%" alt="GitHub stats"/>
+<img src="assets/gh-langs.svg" width="100%" alt="Top languages"/>
 
 <img src="https://streak-stats.demolab.com/?user=TANISHKA2-TECH&hide_border=true&background=0a0e24&ring=8b5cf6&fire=22d3ee&currStreakLabel=c4b5fd&currStreakNum=e2e8f0&sideNums=e2e8f0&sideLabels=94a3b8&dates=94a3b8" alt="streak"/>
 
