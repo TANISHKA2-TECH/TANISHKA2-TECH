@@ -47,6 +47,9 @@ def collect():
                 info["langs"][lang] = info["langs"].get(lang, 0) + b
         except Exception as e:
             print("lang fetch failed for", r.get("name"), e)
+    nb = info["langs"].pop("Jupyter Notebook", 0)
+    if nb:
+        info["langs"]["Python"] = info["langs"].get("Python", 0) + nb
     try:
         q = ('{ user(login: "%s") { contributionsCollection { contributionCalendar { totalContributions } } } }' % USER)
         res = api("https://api.github.com/graphql", json.dumps({"query": q}).encode())
@@ -81,14 +84,19 @@ def render_stats(info):
     return s + '</svg>'
 
 
+def fmt_pct(p):
+    return "&lt;0.1%" if p < 0.1 else f"{p:.1f}%"
+
+
 def render_langs(info):
-    W, H = 1000, 250
+    W = 1000
     langs = sorted(info["langs"].items(), key=lambda kv: -kv[1])
     total = sum(b for _, b in langs) or 1
     top = langs[:6]
     rest = sum(b for _, b in langs[6:])
     if rest:
         top.append(("Other", rest))
+    H = (140 + ((len(top) + 1) // 2 - 1) * 34 + 46) if top else 150
     s = head(W, H)
     s += (f'<rect width="{W}" height="{H}" rx="18" fill="#0a0e24"/>'
           f'<rect x="1" y="1" width="{W - 2}" height="{H - 2}" rx="18" fill="none" stroke="#6d28d9" stroke-opacity=".55" stroke-width="1.5"/>'
@@ -113,7 +121,7 @@ def render_langs(info):
         cy = 140 + (i // 2) * 34
         s += (f'<circle cx="{cx + 7}" cy="{cy - 5}" r="7" fill="{col}"/>'
               f'<text x="{cx + 24}" y="{cy}" font-size="16" font-weight="600" fill="#e2e8f0">{html.escape(name)}</text>'
-              f'<text x="{cx + 440}" y="{cy}" text-anchor="end" font-family="{MONO}" font-size="15" fill="#94a3b8">{pct:.1f}%</text>')
+              f'<text x="{cx + 440}" y="{cy}" text-anchor="end" font-family="{MONO}" font-size="15" fill="#94a3b8">{fmt_pct(pct)}</text>')
     return s + '</svg>'
 
 
